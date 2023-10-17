@@ -1,8 +1,21 @@
-# React + Vite
+# Client SIDE : ABD's WHEELS WORLD 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Live Server Link Firebase: Will be here soon](https://www.google.com)
 
-Currently, two official plugins are available:
+For this BrandShop website category **Automotive** was selected.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website contains Car Brands and their features.
+
+### Features
+
+- This is mostly user based car brand shop where user buys add items . So you can **create user**  using email and info. You can also use **GOOGLE Authentication** for creating an account. User has so many access so make a user account now!
+
+- 2.
+- 3.
+- 4.
+- 5.
+- 6.
+- 7.
+
+
+
