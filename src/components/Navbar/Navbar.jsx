@@ -2,11 +2,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { setTheme } from "../../../public";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../hooks/AuthProvider";
+import { AiOutlineEdit } from "react-icons/ai";
+import { FaSignOutAlt } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, userSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const [logo, setlogo] = useState("/images/logo.png");
+
+
+  const notifySignOut = () =>
+  toast.success("User has been signed out!");
 
   const toggleTheme = (theme) => {
     setTheme(theme);
@@ -17,7 +25,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     userSignOut()
       .then(() => {
-        alert("Sign Out Success")
+        notifySignOut();
         navigate("/login");
       })
       .catch((error) => {
@@ -73,7 +81,10 @@ const Navbar = () => {
         <h2 className="uppercase text-xl font-black">Wheels World</h2>
       </div>
       <div className="navbar-center hidden sm:flex">
-        <ul className="menu menu-horizontal px-1 font-bold uppercase ">{navlinks}</ul>
+        <ul className="menu menu-horizontal px-1 font-bold uppercase ">
+          {navlinks}
+         
+        </ul>
       </div>
       <div className="navbar-end gap-2">
         <Link to={"/my-cart"}>
@@ -82,15 +93,40 @@ const Navbar = () => {
           </button>
         </Link>
         {user ? (
-          <div>
-            {" "}
-            <p>user.email</p>
-            <button
-              className="btn btn-xs rounded-xl btn-error"
-              onClick={handleSignOut}
+          <div className="dropdown dropdown-end z-10">
+            {/* <p>user.email</p>
+             */}
+            <label tabIndex={0} className="pointer  w-16">
+              <div className="avatar online">
+                <div className="w-16 rounded-full">
+                  <img src={user.photoURL? user.photoURL: "images/userDef.jpg"} />
+                </div>
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-4 shadow rounded-md bg-base-100 border-red-200 w-max border-2 text-lg space-y-3"
             >
-              Sign Out
-            </button>
+              <li className="p-2 text-xl font-bold ">
+                {user.displayName ? user.displayName : user.email}
+              </li>
+              <li className="pl-2 text-sm text-base-700">
+                {user.displayName ? user.email : ""}
+              </li>
+              <Link>
+                <li className="flex flex-row items-center">
+                  <p>
+                    <span className="w-fit">
+                      <AiOutlineEdit className="text-xl block text-green-600" />
+                    </span>
+                    <span>View / Edit Profile</span>
+                  </p>
+                </li>
+              </Link>
+              <button className="btn btn-error" onClick={handleSignOut}>
+                <FaSignOutAlt className="block text-2xl font-bold" /> Sign Out
+              </button>
+            </ul>
           </div>
         ) : (
           <Link to={"/login"}>

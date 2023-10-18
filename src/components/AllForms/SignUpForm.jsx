@@ -1,11 +1,32 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../hooks/AuthProvider";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import toast from "react-hot-toast";
+import auth from "../../hooks/firebase.config";
+import { updateProfile } from "firebase/auth";
 
 const SignUpForm = () => {
+  const { user, emailSignUp } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const [passError, setPassError] = useState(null);
+
+  const notifyError = (err) =>
+    toast.error(`${err}`, {
+      style: {
+        minWidth: "250px",
+      },
+    });
+  const notifySignUpSuccess = () =>
+    toast.success("Successfully created an account!");
+
+  console.log(user);
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
     const username = form.username.value;
-    const photo = form.photo.value;
+    let photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
     const userData = {
@@ -15,6 +36,41 @@ const SignUpForm = () => {
       password,
     };
     console.log(userData);
+
+    if (password.length < 6) {
+      setPassError("*password must be more than 6 characters");
+    } else if (!/(?=.*[A-Z])/.test(password)) {
+      setPassError("*must have one capital letter");
+    } else if (!/(?=.*[@$!%*?&])/.test(password)) {
+      setPassError("*must contain a special character");
+    } else {
+      setPassError(null);
+      if (photo == "") {
+        photo = "images/userDef.jpg";
+      }
+      emailSignUp(email, password)
+        .then((res) => {
+          console.log(res.user);
+          updateProfile(auth.currentUser, {
+            displayName: username,
+            photoURL: photo,
+          })
+            .then(() => {
+              console.log("Profile updated!!");
+              notifySignUpSuccess();
+              navigate("/");
+            })
+            .catch((err) => {
+              console.log(err.message);
+            });
+        })
+        .catch((err) => {
+          console.log(err.message);
+          notifyError(err.message)
+        });
+    }
+    
+    
   };
 
   return (
@@ -43,12 +99,29 @@ const SignUpForm = () => {
             placeholder="Email"
             className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none"
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none"
-          />
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none"
+              placeholder="Enter password*"
+            />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 end-0 grid place-content-center px-4 text-red-400 text-xl cursor-pointer "
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </div>
+          <p>
+            {passError ? (
+              <p className="bg-red-600 rounded p-2 block ">{passError}</p>
+            ) : (
+              ""
+            )}
+          </p>
           <button type="submit" className="btn w-full rounded-sm btn-secondary">
             Sign Up
           </button>
@@ -59,6 +132,7 @@ const SignUpForm = () => {
             </Link>
           </p>
         </form>
+        
       </div>
     </div>
   );

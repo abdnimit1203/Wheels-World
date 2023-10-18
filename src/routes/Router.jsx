@@ -7,6 +7,7 @@ import MainLayout from "../layouts/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Accessories from "../pages/Accessories";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/add-products",
-          element:<AddProducts></AddProducts>
+          element:<PrivateRoutes><AddProducts></AddProducts></PrivateRoutes>
         },
         {
           path: "/accessories",
@@ -29,7 +30,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/my-cart",
-          element: <MyCart></MyCart>,
+          element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
         },
         {
           path: "/login",
