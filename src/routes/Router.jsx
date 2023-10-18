@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import MainLayout from "../layouts/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import Accessories from "../pages/Accessories";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         {
           path: "/add-products",
           element:<AddProducts></AddProducts>
+        },
+        {
+          path: "/accessories",
+          element:<Accessories></Accessories>
         },
         {
           path: "/my-cart",

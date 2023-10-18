@@ -33,6 +33,9 @@ const Navbar = () => {
       <li>
         <Link to={"/add-products"}>Add Products</Link>{" "}
       </li>
+      <li>
+        <Link to={"/accessories"}>Accessories</Link>{" "}
+      </li>
 
       <li>
         <Link to={"/"}>About</Link>{" "}
@@ -61,7 +64,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
+            className="menu menu-sm dropdown-content mt-3 z-10 bg-base-100 p-2 shadow  text-base rounded-box w-52 font-semibold"
           >
             {navlinks}
           </ul>
@@ -70,7 +73,7 @@ const Navbar = () => {
         <h2 className="uppercase text-xl font-black">Wheels World</h2>
       </div>
       <div className="navbar-center hidden sm:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold">{navlinks}</ul>
+        <ul className="menu menu-horizontal px-1 font-bold uppercase ">{navlinks}</ul>
       </div>
       <div className="navbar-end gap-2">
         <Link to={"/my-cart"}>

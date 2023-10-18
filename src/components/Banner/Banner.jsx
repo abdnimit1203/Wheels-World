@@ -14,7 +14,7 @@ const Banner = () => {
      centeredSlides={true}
      autoplay={{
        delay: 6500,
-       disableOnInteraction: false,
+       disableOnInteraction: true,
      }}
      pagination={{
        clickable: true,
@@ -23,6 +23,19 @@ const Banner = () => {
      modules={[Autoplay, Pagination, Navigation]}
      className="mySwiper bg-red-400"
     >
+      <SwiperSlide>
+        <div className="bg-[url('images/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
+            <div className="h-[600px] flex flex-col justify-center items-left text-white bg-[#1111117e] px-[20%] gap-3">
+                <p className="text-xl">FIND YOUR DREAM
+                  
+                </p>
+                <h2 className="text-white text-4xl uppercase ">THE NEW <br />
+                  BMW M SERIES <br />
+                  SHADOW EDITION</h2>
+                  <button className="btn w-fit px-6 rounded-sm">See Details</button>
+            </div>
+        </div>
+      </SwiperSlide>
       <SwiperSlide>
         <div className="bg-[url('images/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
             <div className="h-[600px] flex flex-col justify-center items-center text-white bg-[#1111117e]">
