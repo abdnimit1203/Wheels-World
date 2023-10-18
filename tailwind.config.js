@@ -5,7 +5,7 @@ export default {
       {
         mytheme: {
         
-            "primary": "#facc15",
+            "primary": "#ffd83b",
                     
             "secondary": "#185f96",
                     
@@ -24,6 +24,9 @@ export default {
             "error": "#f41042",
         },
       },
+      "light",
+      "dark",
+      "cyberpunk"
     ],
   },
   content: [
