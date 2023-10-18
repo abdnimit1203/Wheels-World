@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../hooks/AuthProvider";
 
 const LoginForm = () => {
+    const {user, emailLogin} = useContext(AuthContext)
+    const navigate = useNavigate()
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,7 +15,25 @@ const LoginForm = () => {
       password,
     };
     console.log(userData);
-  };
+    if (!user) {
+        emailLogin(email, password)
+          .then((result) => {
+            console.log(result.user);
+            alert("User Login Success")
+          
+            navigate(location?.state ? location.state : "/")
+            e.target.email.value = "";
+            e.target.password.value = "";
+          })
+          .catch((error) => {
+            console.log(error);
+        
+          });
+      } else {
+        console.log("Already Logged in");
+      }
+    };
+  
 
   return (
     <div className="bg-[url('images/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
