@@ -57,6 +57,7 @@ const Dummy = () => {
             </div>
         </div>
       </div>
+      <img src="https://i.ibb.co/fn9QB24/loginBG.jpg" alt="" />
       <button
         onClick={() =>
           Swal.fire({

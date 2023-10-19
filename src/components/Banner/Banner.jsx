@@ -24,7 +24,7 @@ const Banner = () => {
      className="mySwiper bg-red-400"
     >
       <SwiperSlide>
-        <div className="bg-[url('images/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
+        <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
             <div className="h-[600px] flex flex-col justify-center items-left text-white bg-[#1111117e] px-[20%] gap-3">
                 <p className="text-xl">FIND YOUR DREAM
                   
@@ -37,7 +37,7 @@ const Banner = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="bg-[url('images/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
+        <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
             <div className="h-[600px] flex flex-col justify-center items-center text-white bg-[#1111117e]">
                 <h2 className="text-white text-4xl">LETS FIND YOUR PERFECT CAR</h2>
                 <h3>Choose from our ready stock or get directly imported from Japan & European countries</h3>
@@ -45,7 +45,7 @@ const Banner = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="bg-[url('images/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
+        <div className="bg-[url('https://i.ibb.co/bRYpVL8/cover.jpg')] bg-center bg-no-repeat bg-cover">
             <div className="h-[600px]">
                 <h2>Hello</h2>
             </div>

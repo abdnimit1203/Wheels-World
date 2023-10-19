@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { setTheme } from "../../../public";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../hooks/AuthProvider";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FaSignOutAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { RiShoppingCartFill } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, userSignOut } = useContext(AuthContext);
@@ -12,9 +13,7 @@ const Navbar = () => {
 
   const [logo, setlogo] = useState("/images/logo.png");
 
-
-  const notifySignOut = () =>
-  toast.success("User has been signed out!");
+  const notifySignOut = () => toast.success("User has been signed out!");
 
   const toggleTheme = (theme) => {
     setTheme(theme);
@@ -35,19 +34,54 @@ const Navbar = () => {
 
   const navlinks = (
     <>
-      <li>
-        <Link to={"/"}>Home</Link>{" "}
-      </li>
-      <li>
-        <Link to={"/add-products"}>Add Products</Link>{" "}
-      </li>
-      <li>
-        <Link to={"/accessories"}>Accessories</Link>{" "}
-      </li>
-
-      <li>
-        <Link to={"/"}>About</Link>{" "}
-      </li>
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " active text-red-500 border-0 border-b-2 border-b-red-500"
+            : "hover:text-red-500"
+        }
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/add-products"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " active text-red-500 border-0 border-b-2 border-b-red-500"
+            : "hover:text-red-500"
+        }
+      >
+        Add Products
+      </NavLink>
+      <NavLink
+        to="/add-products"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " active text-red-500 border-0 border-b-2 border-b-red-500"
+            : "hover:text-red-500"
+        }
+      >
+        Accessories
+      </NavLink>
+      <NavLink
+        to="/nai"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? " active text-red-500 border-0 border-b-2 border-b-red-500"
+            : "hover:text-red-500"
+        }
+      >
+        About
+      </NavLink>
     </>
   );
   return (
@@ -72,7 +106,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-10 bg-base-100 p-2 shadow  text-base rounded-box w-52 font-semibold"
+            className="menu menu-sm dropdown-content mt-3 z-10 bg-base-100 p-6 shadow  text-base rounded-box w-52 font-semibold gap-2"
           >
             {navlinks}
           </ul>
@@ -81,15 +115,14 @@ const Navbar = () => {
         <h2 className="uppercase text-xl font-black">Wheels World</h2>
       </div>
       <div className="navbar-center hidden sm:flex">
-        <ul className="menu menu-horizontal px-1 font-bold uppercase ">
+        <ul className="menu menu-horizontal px-1 font-bold uppercase sm:gap-6">
           {navlinks}
-         
         </ul>
       </div>
       <div className="navbar-end gap-2">
         <Link to={"/my-cart"}>
-          <button className="btn rounded-ee-none rounded-ss-none btn-primary">
-            My Cart
+          <button className="btn rounded-ee-none rounded-ss-none hover:btn-primary text-base-700 border-4 border-primary bg-transparent ">
+            <RiShoppingCartFill className="text-xl" /> My Cart
           </button>
         </Link>
         {user ? (
@@ -99,7 +132,9 @@ const Navbar = () => {
             <label tabIndex={0} className="pointer  w-16">
               <div className="avatar online">
                 <div className="w-16 rounded-full">
-                  <img src={user.photoURL? user.photoURL: "images/userDef.jpg"} />
+                  <img
+                    src={user.photoURL ? user.photoURL : "images/userDef.jpg"}
+                  />
                 </div>
               </div>
             </label>
@@ -130,7 +165,7 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to={"/login"}>
-            <button className="btn rounded-ee-none rounded-ss-none btn-secondary">
+            <button className="btn rounded-ee-none rounded-ss-none hover:btn-neutral text-base-700 border-4 border-neutral">
               Login
             </button>
           </Link>

@@ -74,7 +74,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="bg-[url('images/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
+    <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
       <div className="flex flex-col justify-center items-center p-10 text-white min-h-screen bg-[#02020a62] backdrop-blur-lg">
         <form
           onSubmit={handleSignUp}
@@ -131,6 +131,9 @@ const SignUpForm = () => {
               Login
             </Link>
           </p>
+          <p className="text-center w-full pb-4">or</p>
+          <button type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
+            <span><img src="https://i.ibb.co/syGPgLz/google-Logo.png" alt="g logo" className="w-10"/></span>Sign in with Google</button>
         </form>
         
       </div>
