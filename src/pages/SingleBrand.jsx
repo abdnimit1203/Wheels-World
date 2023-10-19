@@ -6,7 +6,7 @@ const SingleBrand = () => {
   console.log(brandData);
 
   return (
-    <div>
+    <div className="glass">
       {brandData.length ===0 ? (
         <div className="flex flex-col items-center justify-center min-h-screen">
           <h1>OPSS NO DATA</h1>

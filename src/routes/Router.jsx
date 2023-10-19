@@ -10,6 +10,8 @@ import Accessories from "../pages/Accessories";
 import PrivateRoutes from "./PrivateRoutes";
 import About from "../pages/About";
 import SingleBrand from './../pages/SingleBrand';
+import UpdateProduct from "../pages/UpdateProduct";
+import Details from "../pages/Details";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +33,24 @@ export const router = createBrowserRouter([
           path: "/brands/:brandName",
           element:<PrivateRoutes><SingleBrand></SingleBrand></PrivateRoutes>,
           loader: ({params})=> fetch(`http://localhost:3000/products/${params.brandName}`)
+
+        },
+        {
+          path: "/models/:modelName",
+          element:<PrivateRoutes><SingleBrand></SingleBrand></PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:3000/models/${params.modelName}`)
+
+        },
+        {
+          path: "/update-product/:id",
+          element:<PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:3000/products/single/${params.id}`)
+
+        },
+        {
+          path: "/details/:id",
+          element:<PrivateRoutes><Details></Details></PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:3000/products/single/${params.id}`)
 
         },
         {

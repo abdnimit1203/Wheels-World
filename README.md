@@ -1,6 +1,6 @@
 # Client SIDE : ABD's WHEELS WORLD 
 
-- [Live Server Link Firebase: Will be here soon](https://www.google.com)
+- [Live Server Link Firebase](https://brand-shop-automotive-b8a10.web.app/)
 
 For this BrandShop website category **Automotive** was selected.
 

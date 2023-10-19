@@ -1,80 +1,86 @@
-import toast from "react-hot-toast";
+import { BiArrowBack } from "react-icons/bi";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const AddProductForm = () => {
-  const handleAddProduct = (e) => {
+const UpdateProduct = () => {
+  const data = useLoaderData();
+  const productData = data[0]
+  console.log(productData);
+const navigate = useNavigate()
+  const {
+    _id,
+    brandName,
+    imageURL,
+    modelName,
+    price,
+    ratings,
+    short_description,
+    type
+  } = productData;
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
+
     const form = e.target;
-    const modelName = form.modelName.value;
-    const imageURL = form.imageURL.value;
     const brandName = form.brandName.value;
-    const type = form.type.value;
+    const imageURL = form.imageURL.value;
+    const modelName = form.modelName.value;
     const price = form.price.value;
     const ratings = form.ratings.value;
     const short_description = form.short_description.value;
+    const type = form.type.value;
 
-    const productData = {
-      modelName,
-      imageURL,
+    const updatedData = {
       brandName,
-      type,
+      imageURL,
+      modelName,
       price,
       ratings,
       short_description,
+      type
     };
-    console.log("Products data: ", productData);
-    
-    toast.success("Product added successfully!");
-    fetch('http://localhost:3000/products',{
-        method: 'POST',
+
+    console.log("Updated Data = ", updatedData);
+
+    fetch(`http://localhost:3000/products/single/${_id}`,{
+        method: 'PUT',
         headers: {
             'content-type': 'application/json',
 
         },
-        body: JSON.stringify(productData)
+        body: JSON.stringify(updatedData)
     })
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
-        
-        form.reset();
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Updated Successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          navigate('/')
     })
-
   };
   return (
     <div>
-      <section className="">
-        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div className="lg:col-span-2 lg:py-12 space-y-4">
-              <h2 className="text-3xl">
-                Here you can add a Uniques brand new model of cars with our
-                affiliated Brand
-              </h2>
-              <p className="max-w-xl text-lg">
-                At the same time, the fact that we are wholly owned and totally
-                independent from manufacturer and other group control gives you
-                confidence that we will only recommend what is right for you.
-              </p>
-
-              <div className="mt-8">
-                <a href="" className="text-2xl font-bold text-pink-600">
-                  0151 475 4450 456
-                </a>
-
-                <address className="mt-2 not-italic">
-                  282 Kevin Brook, Imogeneborough, CA 58517
-                </address>
-              </div>
-            </div>
+      <Link to={"/"}>
+        <button className="flex items-center gap-3 text-shadow shadow-slate-900/50 font-semibold pl-[5%] my-6">
+          <BiArrowBack /> Back to home
+        </button>
+      </Link>
+      <section className="sm:w-[80%] mx-auto my-10">
+       
+            
             {/* Form div */}
-            <div className="rounded-lg glass p-8 shadow-lg lg:col-span-3 lg:p-12 bg-base-300">
-              <form onSubmit={handleAddProduct} className="space-y-6">
-                <h2 className="text-center pb-10 text-2xl">ADD NEW MODEL</h2>
+            <div className="rounded-lg p-8 shadow-lg  lg:p-12 bg-[url('/images/endless-constellation.png')] text-black">
+              <form onSubmit={handleUpdateProduct} className="space-y-6">
+                <h2 className="text-center text-white pb-10 text-2xl">UPDATE</h2>
                 <div>
                   <label className="sr-only" htmlFor="modelName">
                     Model Name
                   </label>
-                  <input
+                  <input defaultValue={modelName}
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
                     placeholder="Model Name"
                     type="text"
@@ -87,7 +93,7 @@ const AddProductForm = () => {
                   <label className="sr-only" htmlFor="imageURL">
                     Image URL
                   </label>
-                  <input
+                  <input defaultValue={imageURL}
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
                     placeholder="Image URL"
                     type="text"
@@ -100,6 +106,8 @@ const AddProductForm = () => {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="">
                     <select
+                          defaultValue={brandName}
+
                       name="brandName"
                       id="brandName"
                       className="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 pl-4 "
@@ -116,13 +124,13 @@ const AddProductForm = () => {
 
                   <div className="">
                     <select
+                          defaultValue={type}
                       name="type"
                       id="type"
                       className="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 pl-4 "
                     >
                       <option value="">Select Type</option>
                       <option value="Sports Car">Sports Car</option>
-                      <option value="Sports Car">Super Car</option>
                       <option value="SUV">SUV</option>
                       <option value="Sedan">Sedan</option>
                       <option value="Hatchback">Hatchback</option>
@@ -137,7 +145,7 @@ const AddProductForm = () => {
                     <label className="sr-only" htmlFor="price">
                       Price
                     </label>
-                    <input
+                    <input defaultValue={price}
                       className="w-full rounded-lg border-gray-200 p-3 text-sm"
                       placeholder="Price"
                       type="number"
@@ -149,6 +157,7 @@ const AddProductForm = () => {
                   <div className="pt-0">
                   
                   <select
+                      defaultValue={ratings}
                       name="ratings"
                       id="ratings"
                       className=" w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-full pl-4 "
@@ -172,7 +181,7 @@ const AddProductForm = () => {
                   <label className="sr-only" htmlFor="short_description">
                     Image URL
                   </label>
-                  <input
+                  <input defaultValue={short_description}
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
                     placeholder="Short Details"
                     type="text"
@@ -180,21 +189,21 @@ const AddProductForm = () => {
                     name="short_description"
                   />
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 mx-auto">
                   <button
                     type="submit"
-                    className="inline-block w-full rounded-lg px-5 py-3 font-medium  sm:w-auto btn btn-primary"
+                    className=" w-full rounded-lg px-5 py-3 font-medium  sm:w-full btn btn-accent"
                   >
-                    Add product
+                    Update
                   </button>
                 </div>
               </form>
             </div>
-          </div>
-        </div>
+      
+      
       </section>
     </div>
   );
 };
 
-export default AddProductForm;
+export default UpdateProduct;

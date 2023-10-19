@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="hover:animate-background rounded-xl p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
-      <article className="flex bg-white transition hover:shadow-xl ">
+      <article className="flex glass transition hover:shadow-xl ">
         <div className="rotate-180 p-2 [writing-mode:_vertical-lr] bg-red-700 text-white">
           <h1>Latest</h1>
         </div>
