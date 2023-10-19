@@ -15,20 +15,20 @@ const Dummy = () => {
       {/* div 1 */}
       <div className="flex flex-col justify-center items-center py-16 gap-4">
         <h2 className="text-5xl">BOXSTER</h2>
-        <p className="text-gray-500">Get the Porche You always Wanted</p>
+        <p className="text-lg text-gray-500">Get the Porche You always Wanted</p>
         <p className="text-gray-500">per month</p>
-        <h3 className="uppercase ">Limited time offer</h3>
+        <h3 className="uppercase text-xl">Limited time offer</h3>
         <button className="btn btn-primary font-bold">More DEtails</button>
       </div>
 
       {/* div 2 */}
       <div className="flex flex-col justify-center items-center gap-4 p-10 md:px-[15%]">
-        <p className="text-gray-500">We are trusted in Car Sales and Services</p>
+        <p className="text-lg text-gray-500">We are trusted in Car Sales and Services</p>
         <h2 className="text-5xl uppercase font-semibold">Why Choose Us</h2>
-        <p className="text-gray-500">Car Dealer is the most enticing creative modern and multipurpose outo dealer <br />
+        <p className="text-lg text-gray-500 text-center py-6">Car Dealer is the most enticing creative modern and multipurpose outo dealer <br />
         Suitable for any car dealer websites business or corporate websites The Theme has been Created especially for automotive dealers, car resellers car service <br />
         stations, mechanic workshop and auto motor retailers</p>
-        <h2 className="text-3xl">$450</h2>
+        <hr className='py-10'/>
         {/* cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className='flex flex-col justify-center items-center gap-2'>

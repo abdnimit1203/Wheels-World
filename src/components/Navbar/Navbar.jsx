@@ -17,7 +17,6 @@ const Navbar = () => {
 
   const toggleTheme = (theme) => {
     setTheme(theme);
-    console.log(logo);
   };
 
   //signout
@@ -59,7 +58,7 @@ const Navbar = () => {
         Add Products
       </NavLink>
       <NavLink
-        to="/add-products"
+        to="/accessories"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -71,7 +70,7 @@ const Navbar = () => {
         Accessories
       </NavLink>
       <NavLink
-        to="/nai"
+        to="/about"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -133,7 +132,7 @@ const Navbar = () => {
               <div className="avatar online">
                 <div className="w-16 rounded-full">
                   <img
-                    src={user.photoURL ? user.photoURL : "images/userDef.jpg"}
+                    src={user.photoURL ? user.photoURL : "https://i.ibb.co/5x6DN2n/blank-dp.png"}
                   />
                 </div>
               </div>
@@ -203,6 +202,7 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
+       
       </div>
     </div>
   );

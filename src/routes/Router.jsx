@@ -8,6 +8,8 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Accessories from "../pages/Accessories";
 import PrivateRoutes from "./PrivateRoutes";
+import About from "../pages/About";
+import SingleBrand from './../pages/SingleBrand';
 
 export const router = createBrowserRouter([
     {
@@ -26,8 +28,18 @@ export const router = createBrowserRouter([
           element:<PrivateRoutes><AddProducts></AddProducts></PrivateRoutes>
         },
         {
+          path: "/brands/:brandName",
+          element:<PrivateRoutes><SingleBrand></SingleBrand></PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:3000/products/${params.brandName}`)
+
+        },
+        {
           path: "/accessories",
           element:<Accessories></Accessories>
+        },
+        {
+          path: "/about",
+          element:<About></About>
         },
         {
           path: "/my-cart",

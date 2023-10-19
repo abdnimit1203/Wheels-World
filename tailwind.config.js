@@ -25,7 +25,27 @@ export default {
         },
       },
       "light",
-      "dark",
+      {
+        "dark":{
+          "primary": "#ffd83b",
+                    
+          "secondary": "#185f96",
+                  
+          "accent": "#96d5f7",
+                  
+          "neutral": "#ffffff",
+                  
+          "base-100": "#1d212a",
+                  
+          "info": "#fda4af",
+                  
+          "success": "#18b47b",
+                  
+          "warning": "#f0d447",
+                  
+          "error": "#f41042",
+        }
+      },
       "cyberpunk"
     ],
   },

@@ -16,3 +16,8 @@ h6 {
   --swiper-theme-color: #be1111cb !important;
   font-family: "Gabarito", sans-serif;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../hooks/AuthProvider";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
+  const location = useLocation()
+  console.log(location);
     const {user, emailLogin} = useContext(AuthContext)
     const navigate = useNavigate()
 
@@ -51,8 +53,8 @@ const LoginForm = () => {
     <>
    
     
-    <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
-      <div className="flex flex-col justify-center items-center p-10 text-white min-h-screen bg-[#0a055759] backdrop-blur-lg">
+    <div className="bg-[url('https://i.ibb.co/ZcWL28v/register-bg.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
+      <div className="flex flex-col justify-center items-center p-10 text-white min-h-screen bg-[#0a055759] ">
         <form
           onSubmit={handleLogin}
           className="glass py-12 px-20 rounded-xl flex flex-col gap-4 w-fit mx-auto "
@@ -62,7 +64,8 @@ const LoginForm = () => {
             type="email"
             name="email"
             placeholder="Email"
-            className="bg-transparent border-b-2 p-2 mx-auto w-72 my-10 text-white outline-none"
+            required
+            className="bg-transparent border-b-2 p-2 mx-auto w-72 my-10 text-white outline-none placeholder-pink-100"
           />
           
           <div className="relative">
@@ -70,8 +73,8 @@ const LoginForm = () => {
               type={showPassword ? "text" : "password"}
               name="password"
               required
-              className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none"
-              placeholder="Enter password*"
+              className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none placeholder-pink-100"
+              placeholder="Enter password"
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
