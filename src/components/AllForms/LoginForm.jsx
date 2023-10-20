@@ -8,12 +8,16 @@ import toast from "react-hot-toast";
 const LoginForm = () => {
   const location = useLocation()
   console.log(location);
-    const {user, emailLogin} = useContext(AuthContext)
+    const {user, emailLogin,googleLogin} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const [showPassword, setShowPassword] = useState(false);
 
-    
+    const notifyLoginSuccess = () =>
+    toast.success("Login Successfull!");
+    const notifyLoginError = (err) =>
+    toast.error(`${err}`);
+
   const handleLogin = (e) => {
 
     e.preventDefault();
@@ -25,10 +29,7 @@ const LoginForm = () => {
       password,
     };
     console.log(userData);
-    const notifyLoginSuccess = () =>
-    toast.success("Login Successfull!");
-    const notifyLoginError = (err) =>
-    toast.error(`${err}`);
+    
 
     if (!user) {
         emailLogin(email, password)
@@ -47,7 +48,19 @@ const LoginForm = () => {
         console.log("Already Logged in");
       }
     };
-  
+    const handleGoogleLogIn = () => {
+      if (!user) {
+        googleLogin()
+          .then((res) => {
+            console.log(res.user);
+            notifyLoginSuccess();
+            navigate(location?.state ? location.state : "/")
+          })
+          .catch();
+      } else {
+        toast.error("Sign out of other account first!");
+      }
+    };
 
   return (
     <>
@@ -92,7 +105,7 @@ const LoginForm = () => {
             Dont have an account? <Link to={"/signup"} className="font-bold text-primary">Sign Up</Link>
           </p>
           <p className="text-center w-full pb-4">or</p>
-          <button type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
+          <button onClick={handleGoogleLogIn} type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
             <span><img src="https://i.ibb.co/syGPgLz/google-Logo.png" alt="g logo" className="w-10"/></span>Sign in with Google</button>
           <img src="" alt="" />
         </form>

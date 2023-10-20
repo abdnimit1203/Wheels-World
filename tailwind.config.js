@@ -29,7 +29,7 @@ export default {
         "dark":{
           "primary": "#ffd83b",
                     
-          "secondary": "#185f96",
+          "secondary": "#39abe7",
                   
           "accent": "#96d5f7",
                   

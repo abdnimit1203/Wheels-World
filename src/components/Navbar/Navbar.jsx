@@ -130,7 +130,7 @@ const Navbar = () => {
              */}
             <label tabIndex={0} className="pointer  w-16">
               <div className="avatar online">
-                <div className="w-16 rounded-full">
+                <div className="w-16 rounded-full border-4 border-slate-600">
                   <img
                     src={user.photoURL ? user.photoURL : "https://i.ibb.co/5x6DN2n/blank-dp.png"}
                   />

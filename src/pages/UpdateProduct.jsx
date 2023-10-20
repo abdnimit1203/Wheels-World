@@ -70,11 +70,18 @@ const navigate = useNavigate()
         </button>
       </Link>
       <section className="sm:w-[80%] mx-auto my-10">
-       
-            
+      <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div className="lg:col-span-2 lg:pb-12 space-y-4">
+                <img src="https://cdn.dribbble.com/users/330915/screenshots/9148258/5_dribbble.gif" alt="gif animated"className="w-full" />
+              <h2 className="text-3xl">
+                Update Your Car Details
+              </h2>
+             <p>You can update every sort of data available in the car ! make sure to provide a workable url </p>
+            </div>
             {/* Form div */}
-            <div className="rounded-lg p-8 shadow-lg  lg:p-12 bg-[url('/images/endless-constellation.png')] text-black">
-              <form onSubmit={handleUpdateProduct} className="space-y-6">
+            <div className="rounded-lg p-8 shadow-lg  lg:p-12 bg-[url('/images/endless-constellation.png')] text-black glass lg:col-span-3 bg-base-300">
+              <form onSubmit={handleUpdateProduct} className="space-y-6 lg:space-y-9 ">
                 <h2 className="text-center text-white pb-10 text-2xl">UPDATE</h2>
                 <div>
                   <label className="sr-only" htmlFor="modelName">
@@ -199,8 +206,9 @@ const navigate = useNavigate()
                 </div>
               </form>
             </div>
+            </div>
       
-      
+      </div>
       </section>
     </div>
   );

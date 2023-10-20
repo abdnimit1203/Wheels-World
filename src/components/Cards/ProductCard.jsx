@@ -14,8 +14,8 @@ const ProductCard = ({ product }) => {
   } = product;
 
   return (
-    <div className="hover:animate-background rounded-xl p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
-      <article className="flex glass transition hover:shadow-xl ">
+    <div className="hover:animate-background rounded-xl p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] max-w-7xl mx-auto">
+      <article className="flex glass bg-base-100 transition hover:shadow-xl ">
         <div className="rotate-180 p-2 [writing-mode:_vertical-lr] bg-red-700 text-white">
           <h1>Latest</h1>
         </div>
@@ -30,10 +30,10 @@ const ProductCard = ({ product }) => {
 
         <div className="flex flex-1 flex-col justify-between">
           <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-            <h3 className="font-bold uppercase text-gray-900 text-2xl">
+            <h3 className="font-bold uppercase text-neutral text-2xl">
               {modelName}
             </h3>
-            <h3 className="font-semibold uppercase text-gray-900 border-2 p-3 rounded-xl border-slate-600 mt-4 w-fit">
+            <h3 className="font-semibold uppercase text-neutral border-2 p-3 rounded-xl border-neutral mt-4 w-fit">
               BRAND : {brandName}
             </h3>
             <button className="btn btn-xs my-2 btn-secondary">{type}</button>
@@ -46,8 +46,8 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="sm:flex sm:flex-col sm:justify-between">
           <Link to={`/update-product/${_id}`}>
-            <button className="btn btn-warning rounded-sm px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition  flex gap-2">
-              <BiEditAlt /> Update
+            <button className="btn btn-warning rounded-sm p-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition lg:float-right ">
+              <BiEditAlt />Update
             </button>
           </Link>
           <Link to={`/details/${_id}`}>

@@ -7,7 +7,7 @@ import auth from "../../hooks/firebase.config";
 import { updateProfile } from "firebase/auth";
 
 const SignUpForm = () => {
-  const { user, emailSignUp } = useContext(AuthContext);
+  const { user, emailSignUp,googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const [passError, setPassError] = useState(null);
@@ -72,6 +72,24 @@ const SignUpForm = () => {
     
     
   };
+  const handleGoogleLogIn = () => {
+    if (!user) {
+      googleLogin()
+        .then((res) => {
+          console.log(res.user);
+          notifySignUpSuccess();
+          navigate(location?.state ? location.state : "/")
+        })
+        .catch(error=>{
+          // const errorCode = error.code;
+          const errorMessage = error.message;
+          notifyError(errorMessage)
+
+    })
+    } else {
+      toast.error("Sign out of other account first!");
+    }
+  };
 
   return (
     <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
@@ -132,7 +150,7 @@ const SignUpForm = () => {
             </Link>
           </p>
           <p className="text-center w-full pb-4">or</p>
-          <button type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
+          <button onClick={handleGoogleLogIn} type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
             <span><img src="https://i.ibb.co/syGPgLz/google-Logo.png" alt="g logo" className="w-10"/></span>Sign in with Google</button>
         </form>
         

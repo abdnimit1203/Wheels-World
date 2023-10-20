@@ -2,9 +2,11 @@ import PropTypes from "prop-types";
 
 import {
 
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -14,6 +16,7 @@ import auth from "./firebase.config";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
+  const googleProvider = new GoogleAuthProvider();
 
 
   const [user, setUser] = useState(null);
@@ -38,7 +41,12 @@ const updateUserProfile =(username,imgUrl)=>{
     displayName: username , photoURL : imgUrl
   })
 }
+// Google  Log In
 
+const googleLogin = () => {
+  setLoading(true)
+  return signInWithPopup(auth,googleProvider);
+};
 // All user LOGOUT
   const userSignOut = () => {
     setLoading(false)
@@ -61,6 +69,7 @@ const updateUserProfile =(username,imgUrl)=>{
     loading,
     emailSignUp,
     emailLogin,
+    googleLogin,
     updateUserProfile,
     userSignOut
   };

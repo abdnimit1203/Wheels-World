@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AiFillStar } from "react-icons/ai";
 import { BiCartAdd } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../hooks/AuthProvider";
 
 const Details = () => {
 
   const data = useLoaderData();
   const productData = data[0];
+  const {user} = useContext(AuthContext)
   console.log(productData);
 //   const navigate = useNavigate();
+console.log(user.email);
+console.log(productData._id);
 const notify = ()=>{
     toast.success(`${modelName} -Added to cart Successfully`)
 }
@@ -31,7 +36,7 @@ const notify = ()=>{
   }
   return (
     <div className="">
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center bg-base-300">
         <img src={imageURL} alt="car-image" />
       </div>
       <div className="w-[80%] mx-auto gap-6 p-4 flex felx-col md:flex-row pt-14 ">

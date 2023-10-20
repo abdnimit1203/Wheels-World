@@ -14,6 +14,7 @@ const MainLayout = () => {
         <Toaster
           toastOptions={{
             success: {
+              duration: 4000,
               style: {
                 background: "#40D861",
                 color: "white",
