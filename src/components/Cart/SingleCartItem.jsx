@@ -1,12 +1,56 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
 const SingleCartItem = ({ cartItems }) => {
-  // console.log(cartItems);
+  console.log(cartItems);
   const [myCart, setMyCart] = useState([]);
   useEffect(()=>{
     setMyCart(cartItems)
   },[cartItems])
   console.log(myCart);
+
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        fetch(`http://localhost:3000/carts/single/${_id}`, {
+          method: "DELETE",
+          headers:{
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(myCart[0])
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            const updatedCart = myCart.filter(
+              (cart) => cart._id != _id
+            );
+            setMyCart(updatedCart);
+          });
+        Swal.fire("Deleted!", "Your Product has been deleted.", "success");
+      }
+    });
+  };
+
+
+
+
+
+
+
+
+
+
   return myCart.length ? (
     myCart.map(cartItem=>
     <li className="flex items-center gap-4" key={cartItem._id}>

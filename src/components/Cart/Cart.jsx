@@ -16,21 +16,12 @@ const Cart = () => {
     fetch(`http://localhost:3000/carts/${cartUser}`)
       .then((res) => res.json())
       .then((data) => setCartIDs(data));
-  }, []);
+  }, [cartUser]);
   console.log("CART = ", cartIDs);
 
   // MATCHING IDS TO GET PRODUCT DATA
 
-  const matchedProducts = [];
-  for (const product of allProductData) {
-    for (const cart of cartIDs) {
-      if (product._id == cart.cartID) {
-        matchedProducts.push(product);
-        break; // No need to continue searching for this object
-      }
-    }
-  }
-  console.log(matchedProducts);
+  console.log(cartIDs);
   return (
     <div>
       <section>
@@ -38,13 +29,13 @@ const Cart = () => {
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
               <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
-                Your Cart ({matchedProducts.length} items)
+                Your Cart 
               </h1>
             </header>
 
             <div className="mt-8">
               <ul className="space-y-4">
-                <SingleCartItem cartItems={matchedProducts}></SingleCartItem>
+                <SingleCartItem cartItems={cartIDs}></SingleCartItem>
               </ul>
 
               <div className="mt-8 flex justify-end border-t border-gray-100 pt-8 hidden">

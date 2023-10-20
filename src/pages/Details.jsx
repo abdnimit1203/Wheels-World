@@ -43,9 +43,15 @@ const notify = ()=>{
   } = productData;
   const cartID = _id
   const cartData = {
-    userEmail,
+   userEmail,
    cartID,
-   modelName
+   brandName,
+   imageURL,
+   modelName,
+   price,
+   ratings,
+   short_description,
+   type
 }
 
   const handleAddToCart = ()=>{
