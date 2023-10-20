@@ -87,7 +87,7 @@ const notify = ()=>{
             </div>
             <div>
                 <button className="btn hover:">THIS CAR GOT A {ratings} <AiFillStar className="text-orange-500 text-xl"/> Ratings</button>
-                <p className="border-4 border-neutral rounded-full my-6 p-3 text-center bg-gradient-to-tr from-red-700 to-rose-600 text-white">Price: ${price}</p>
+                <p className="border-4 border-neutral rounded-full my-6 p-3 text-center bg-gradient-to-tr from-red-700 to-rose-600 text-white">Price: $ {parseInt(price).toLocaleString("en-US")}</p>
                 <button onClick={handleAddToCart} className="btn btn-neutral btn-wide"><BiCartAdd className="text-xl text-red-500"/>Add to Cart </button>
             </div>
       </div>

@@ -114,7 +114,7 @@ const Navbar = () => {
         
         <div className="flex flex-col md:flex-row justify-center items-center">
           <img src={logo} alt="logo" className="w-24" />
-          <h2 className="uppercase text-xl font-black text-center">Wheels World</h2>
+          <h2 className="uppercase md:text-xl font-black text-center">Wheels World</h2>
         </div>
         </Link>
       </div>

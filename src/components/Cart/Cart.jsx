@@ -38,7 +38,7 @@ const Cart = () => {
                 <SingleCartItem cartItems={cartIDs}></SingleCartItem>
               </ul>
 
-              <div className="mt-8 flex justify-end border-t border-gray-100 pt-8 hidden">
+              <div className="mt-8 //flex justify-end border-t border-gray-100 pt-8 hidden">
                 <div className="w-screen max-w-lg space-y-4">
                   <dl className="space-y-0.5 text-sm text-gray-700">
                     <div className="flex justify-between">

@@ -37,11 +37,17 @@ const ProductCard = ({ product }) => {
               BRAND : {brandName}
             </h3>
             <button className="btn btn-xs my-2 btn-secondary">{type}</button>
-            <p>$ {parseInt(price).toLocaleString("en-US")}</p>
+            <p className="text-lg">$ {parseInt(price).toLocaleString("en-US")}</p>
             {/* <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
              {short_description}
             </p> */}
-            <p>Ratings : {ratings}</p>
+            <p className="text-lg">Ratings : {ratings}</p>
+            <Link to={`/details/${_id}`}>
+          
+          <button className="btn btn-neutral border-2 border-slate-600 rounded-sm px-5 py-3 text-center text-xs font-bold uppercase transition  flex gap-2">
+            <BiEditAlt /> Details
+          </button>
+          </Link>
           </div>
         </div>
         <div className="sm:flex sm:flex-col sm:justify-between">
@@ -50,12 +56,7 @@ const ProductCard = ({ product }) => {
               <BiEditAlt />Update
             </button>
           </Link>
-          <Link to={`/details/${_id}`}>
           
-          <button className="btn btn-neutral border-2 border-slate-600 rounded-sm px-5 py-3 text-center text-xs font-bold uppercase transition  flex gap-2">
-            <BiEditAlt /> Details
-          </button>
-          </Link>
         </div>
       </article>
     </div>

@@ -122,6 +122,7 @@ const AddProductForm = () => {
                       <option value="Sedan">Sedan</option>
                       <option value="Hatchback">Hatchback</option>
                       <option value="Coupe">Coupe</option>
+                      <option value="Pickup Truck">Pickup Truck</option>
                       <option value="Roadster">Roadster</option>
                       <option value="Luxury car">Luxury car</option>
                     </select>
