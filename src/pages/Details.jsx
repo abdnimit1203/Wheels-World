@@ -4,18 +4,31 @@ import { AiFillStar } from "react-icons/ai";
 import { BiCartAdd } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../hooks/AuthProvider";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 const Details = () => {
 
   const data = useLoaderData();
   const productData = data[0];
   const {user} = useContext(AuthContext)
+
   console.log(productData);
 //   const navigate = useNavigate();
 console.log(user.email);
 console.log(productData._id);
+const userEmail = user.email
 const notify = ()=>{
-    toast.success(`${modelName} -Added to cart Successfully`)
+    toast('Product successfully Added to CART! ', {
+        duration: 4000,
+        position: 'top-right',
+      
+        // Styling
+        style: {height: "60px"},
+        className: '',
+      
+        // Custom Icon
+        icon: <BsFillCartPlusFill className="text-2xl"/>,
+    })      
 }
 
   const {
@@ -28,11 +41,30 @@ const notify = ()=>{
     short_description,
     type,
   } = productData;
-
+  const cartID = _id
+  const cartData = {
+    userEmail,
+   cartID,
+   modelName
+}
 
   const handleAddToCart = ()=>{
-    notify()
-    console.log(_id);
+  
+    fetch('http://localhost:3000/carts',{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+
+        },
+        body: JSON.stringify(cartData)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        notify()
+    })
+   
+    
   }
   return (
     <div className="">

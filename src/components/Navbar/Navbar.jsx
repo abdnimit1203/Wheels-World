@@ -84,7 +84,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 p-2 lg:px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost sm:hidden">
@@ -110,8 +110,13 @@ const Navbar = () => {
             {navlinks}
           </ul>
         </div>
-        <img src={logo} alt="logo" className="w-24" />
-        <h2 className="uppercase text-xl font-black">Wheels World</h2>
+        <Link to={"/"}>
+        
+        <div className="flex flex-col md:flex-row justify-center items-center">
+          <img src={logo} alt="logo" className="w-24" />
+          <h2 className="uppercase text-xl font-black text-center">Wheels World</h2>
+        </div>
+        </Link>
       </div>
       <div className="navbar-center hidden sm:flex">
         <ul className="menu menu-horizontal px-1 font-bold uppercase sm:gap-6">
@@ -120,8 +125,8 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-2">
         <Link to={"/my-cart"}>
-          <button className="btn rounded-ee-none rounded-ss-none hover:btn-primary text-base-700 border-4 border-primary bg-transparent ">
-            <RiShoppingCartFill className="text-xl" /> My Cart
+          <button className="btn rounded-ee-none rounded-ss-none hover:btn-primary text-base-700 border-0 sm:border-4 border-primary bg-transparent h-full">
+            <RiShoppingCartFill className="text-3xl sm:text-xl text-center" /><span className="hidden sm:flex"> My Cart</span>
           </button>
         </Link>
         {user ? (
@@ -132,7 +137,11 @@ const Navbar = () => {
               <div className="avatar online">
                 <div className="w-16 rounded-full border-4 border-slate-600">
                   <img
-                    src={user.photoURL ? user.photoURL : "https://i.ibb.co/5x6DN2n/blank-dp.png"}
+                    src={
+                      user.photoURL
+                        ? user.photoURL
+                        : "https://i.ibb.co/5x6DN2n/blank-dp.png"
+                    }
                   />
                 </div>
               </div>
@@ -202,7 +211,6 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-       
       </div>
     </div>
   );
