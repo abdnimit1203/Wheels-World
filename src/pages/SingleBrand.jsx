@@ -45,7 +45,7 @@ const SingleBrand = () => {
     >
       <SwiperSlide>
         <div className="bg-[url('https://i.ibb.co/xsjm1N3/mercedes-C-class.jpg')] bg-center bg-no-repeat bg-cover">
-            <div className="h-[600px] flex flex-col justify-center items-end text-right text-white bg-[#11111148] px-[20%] gap-3">
+            <div className="h-[600px] flex flex-col justify-start pt-20 items-end text-right text-white bg-[#11111148] px-[20%] gap-3">
                 <h2 className="text-white text-8xl uppercase text-shadow-lg shadow-slate-500/50 ">2022</h2>
                 <h2 className="text-white text-6xl uppercase text-shadow-lg shadow-slate-500/50">C-CLass</h2>
                 <p className="text-3xl uppercase text-primary font-bold">Launched</p>

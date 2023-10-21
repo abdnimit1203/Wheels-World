@@ -48,8 +48,7 @@ const AddProductForm = () => {
             <div className="lg:col-span-2 lg:pb-12 space-y-4">
                 <img src="https://cdn.dribbble.com/users/1830388/screenshots/6142489/800x600.gif" alt="gif animated"className="w-full" />
               <h2 className="text-3xl">
-                Here you can add a Uniques brand new car models of our
-                affiliated Brand
+               Here you can add a brand new model of car with appropriate working car photo URL (*leave URL empty if no URL). Make sure to select all the brand and model 
               </h2>
               <div className="mt-8">
                 <p href="" className="text-2xl font-bold text-pink-600">
@@ -95,6 +94,7 @@ const AddProductForm = () => {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="">
                     <select
+                    required
                       name="brandName"
                       id="brandName"
                       className="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 pl-4 "
@@ -139,6 +139,7 @@ const AddProductForm = () => {
                       type="number"
                       id="price"
                       min="0"
+                      required
                     />
                   </div>
 
