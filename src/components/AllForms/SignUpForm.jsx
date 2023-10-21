@@ -96,7 +96,7 @@ const SignUpForm = () => {
       <div className="flex flex-col justify-center items-center p-10 text-white min-h-screen bg-[#02020a62] backdrop-blur-lg">
         <form
           onSubmit={handleSignUp}
-          className="glass py-12 px-20 rounded-xl flex flex-col gap-4 w-fit mx-auto "
+          className="glass py-12 px-10 md:px-20 rounded-xl flex flex-col gap-4 w-fit md:mx-auto "
         >
           <h2 className="text-white text-4xl pt-10 text-center">Sign Up</h2>
           <input

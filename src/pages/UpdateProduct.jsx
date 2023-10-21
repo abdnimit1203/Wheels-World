@@ -167,7 +167,7 @@ const navigate = useNavigate()
                       defaultValue={ratings}
                       name="ratings"
                       id="ratings"
-                      className=" w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-full pl-4 "
+                      className=" w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 sm:h-full pl-4 "
                     >
                       <option value="">Ratings</option>
                       <option value="0">0</option>

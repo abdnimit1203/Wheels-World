@@ -3,57 +3,55 @@ import { BsThermometerSnow } from "react-icons/bs";
 import { GiCarWheel } from "react-icons/gi";
 
 import Marquee from "react-fast-marquee";
-
-const Dummy = () => {
+const Extra = () => {
   return (
-    <>
-      <div className="bg-[url(https://i.ibb.co/XXSyFfy/bg.jpg)] bg-cover ">
-        <div className="flex flex-col md:flex-row gap-4 p-10 md:px-[15%]">
-          <div className="w-fit flex-1">
-            <img
-              src="https://i.ibb.co/1KS9v1T/carsale.png"
-              alt="porche Sale"
-              className=" w-fit "
-            />
-          </div>
-
-          <div className="flex flex-col justify-center items-center py-16 gap-4 flex-1">
-            <h2 className="text-5xl text-white">718 BOXSTER</h2>
-            <p className="text-lg text-gray-300">
-              Get the Porche You always Wanted
-            </p>
-            <p className="text-gray-500">per month</p>
-            <h3 className="uppercase text-xl text-white">Limited time offer</h3>
-            <button className="btn btn-primary font-bold">More DEtails</button>
-          </div>
-        </div>
-      </div>
-      {/* div 1 */}
-
-      {/* div 2 */}
+    <div>
       <div className="sm:px-[15%] py-14">
-        <h2 className="text-2xl text-center uppercase pb-14">More Brands comming soon...</h2>
+        <h2 className="text-2xl text-center uppercase pb-14">
+          More Brands comming soon...
+        </h2>
         <Marquee>
           <div className="px-6">
-            <img src="https://i.ibb.co/8brgWJD/porsche.png" alt="marquee image car logo" className="h-20 md:h-32 mx-5" />
+            <img
+              src="https://i.ibb.co/8brgWJD/porsche.png"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
+            />
           </div>
           <div className="px-6">
-            <img src="https://i.ibb.co/PmVCvMQ/mazda.png" alt="marquee image car logo" className="h-20 md:h-32 mx-5" />
+            <img
+              src="https://i.ibb.co/PmVCvMQ/mazda.png"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
+            />
           </div>
           <div className="px-6">
-            <img src="https://i.ibb.co/bKhW9dz/lexus.png" alt="marquee image car logo" className="h-20 md:h-32 mx-5" />
+            <img
+              src="https://i.ibb.co/bKhW9dz/lexus.png"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
+            />
           </div>
           <div className="px-6">
-            <img src="https://i.ibb.co/GJ5wcWQ/volkwagen.png" alt="marquee image car logo" className="h-20 md:h-32 mx-5" />
+            <img
+              src="https://i.ibb.co/GJ5wcWQ/volkwagen.png"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
+            />
           </div>
           <div className="px-6">
-            <img src="https://i.ibb.co/zN4QfCN/audi.png" alt="marquee image car logo" className="h-20 md:h-32 mx-5" />
+            <img
+              src="https://i.ibb.co/zN4QfCN/audi.png"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
+            />
           </div>
           <div className="px-6">
             <img
               src="https://i.ibb.co/9bY44fm/mitsubisi.png
 "
-              alt="marquee image car logo" className="h-20 md:h-32 mx-5"
+              alt="marquee image car logo"
+              className="h-20 md:h-32 mx-5"
             />
           </div>
         </Marquee>
@@ -61,10 +59,8 @@ const Dummy = () => {
 
       {/* div 3 */}
       <div className="flex flex-col justify-center items-center gap-4 p-10 md:px-[15%] md:py-32">
-        <p className="text-lg text-gray-500">
-          We are trusted in Car Sales and Services
-        </p>
-        <h2 className="text-5xl uppercase font-semibold">Why Choose Us</h2>
+        
+        <h2 className="text-3xl border-x-8 border-red-600 px-10 sm:text-5xl uppercase font-semibold text-center">Why Choose Us</h2>
         <p className="text-lg text-gray-500 text-center py-6">
           Car Dealer is the most enticing creative modern and multipurpose outo
           dealer <br />
@@ -128,8 +124,8 @@ const Dummy = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Dummy;
+export default Extra;

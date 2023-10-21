@@ -58,7 +58,7 @@ const Navbar = () => {
         Add Products
       </NavLink>
       <NavLink
-        to="/accessories"
+        to="/services"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -67,20 +67,10 @@ const Navbar = () => {
             : "hover:text-red-500"
         }
       >
-        Accessories
+        Services
       </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? " active text-red-500 border-0 border-b-2 border-b-red-500"
-            : "hover:text-red-500"
-        }
-      >
-        About
-      </NavLink>
+      
+      
     </>
   );
   return (

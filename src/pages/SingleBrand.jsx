@@ -33,7 +33,7 @@ const SingleBrand = () => {
      spaceBetween={30}
      centeredSlides={true}
      autoplay={{
-       delay: 6500,
+       delay: 16500,
        disableOnInteraction: false,
      }}
      pagination={{
@@ -44,32 +44,40 @@ const SingleBrand = () => {
      className="mySwiper bg-red-800"
     >
       <SwiperSlide>
-        <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] bg-center bg-no-repeat bg-cover">
-            <div className="h-[600px] flex flex-col justify-center items-left text-white bg-[#1111117e] px-[20%] gap-3">
-                <p className="text-xl">FIND YOUR DREAM
-                  
-                </p>
-                <h2 className="text-white text-4xl uppercase ">THE NEW <br />
-                  BMW M SERIES <br />
-                  SHADOW EDITION</h2>
-                  <button className="btn w-fit px-6 rounded-sm bg-red-700 text-white hover:bg-red-600">See Details</button>
+        <div className="bg-[url('https://i.ibb.co/xsjm1N3/mercedes-C-class.jpg')] bg-center bg-no-repeat bg-cover">
+            <div className="h-[600px] flex flex-col justify-center items-end text-right text-white bg-[#11111148] px-[20%] gap-3">
+                <h2 className="text-white text-8xl uppercase text-shadow-lg shadow-slate-500/50 ">2022</h2>
+                <h2 className="text-white text-6xl uppercase text-shadow-lg shadow-slate-500/50">C-CLass</h2>
+                <p className="text-3xl uppercase text-primary font-bold">Launched</p>
+                <Link to={'/brands/Mercedes-Benz'}>
+                
+                  <button className="btn btn-xs btn-error w-fit px-6 rounded-sm  text-white">View Model</button>
+                </Link>
             </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="bg-[url('https://i.ibb.co/hWNBCJZ/lamborghini-revuelto-100879502-h.jpg')] bg-center bg-no-repeat bg-cover">
-            <div className="h-[600px] flex flex-col justify-center items-center text-white bg-[#1111117e] px-[20%] gap-4">
-                <h2 className="text-white text-4xl">LETS FIND YOUR PERFECT CAR</h2>
-                <h3>Choose from our ready stock or get directly imported from Japan & European countries</h3>
+        <div className="bg-[url('https://i.ibb.co/W2spNvt/ford-f-150.jpg')] bg-center bg-no-repeat bg-cover">
+            <div className="h-[600px] flex flex-col justify-end items-center text-white bg-[#1111113b] px-[20%] gap-4 pb-16">
+                <h2 className="text-white text-3xl">THE OFF-ROAD KING is here</h2>
+                <h2 className="text-blue-500 text-4xl text-center">FORD F150</h2>
+               <Link to={'/brands/Ford'}>
+               
+                <p className="btn btn-xs">CHECK THIS OUT</p>
+               </Link>
             </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="bg-[url('https://i.ibb.co/Zc3CRTT/lamborghini-BG.jpg')] bg-center bg-no-repeat bg-cover">
-            <div className="h-[600px] flex flex-col justify-center items-center text-white bg-[#1111117e] px-[20%] gap-6">
-                <h2 className="text-white text-4xl">Luxury Meets Affordability <br /> with WHEELS WORLD</h2>
-                <h3 className="text-lg">Look for the brand bars below to view and buy you perfect car of life</h3>
-                <button className="btn btn-warning rounded-sm">Buy Now</button>
+        <div className="bg-[url('https://i.ibb.co/R2SC5z3/TESLA-cyber-truck.jpg')] bg-center bg-no-repeat bg-cover">
+            <div className="h-[600px] flex flex-col justify-end pb-14 items-center text-white bg-[#1111117e] px-[20%] gap-6">
+              <img src="https://i.ibb.co/kBx841g/cybertruck.png" alt="cybertruck" className="w-fit h-20" />
+              <h2 className="text-white text-3xl text-shadow-lg uppercase text-center shadow-indigo-500/50">Get the brand new CYberTRUCK now!</h2>
+              <Link to={'/brands/Tesla'}>
+              
+              <button className="border-2 border-sky-400 rounded-md py-2 px-5 hover:btn-accent">Grab It</button>
+              </Link>
+               
             </div>
         </div>
       </SwiperSlide>

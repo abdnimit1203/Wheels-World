@@ -6,12 +6,11 @@ import SignUp from "../pages/SignUp";
 import MainLayout from "../layouts/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
-import Accessories from "../pages/Accessories";
 import PrivateRoutes from "./PrivateRoutes";
-import About from "../pages/About";
 import SingleBrand from './../pages/SingleBrand';
 import UpdateProduct from "../pages/UpdateProduct";
 import Details from "../pages/Details";
+import Services from "../pages/Services";
 
 export const router = createBrowserRouter([
     {
@@ -54,13 +53,10 @@ export const router = createBrowserRouter([
 
         },
         {
-          path: "/accessories",
-          element:<Accessories></Accessories>
+          path: "/services",
+          element:<Services></Services>
         },
-        {
-          path: "/about",
-          element:<About></About>
-        },
+        
         {
           path: "/my-cart",
           element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,

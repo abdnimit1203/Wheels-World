@@ -72,24 +72,29 @@ const notify = ()=>{
    
     
   }
+  
   return (
     <div className="">
       <div className="flex justify-center items-center bg-base-300">
-        <img src={imageURL} alt="car-image" />
+        <img src={imageURL? imageURL : "https://i.ibb.co/B4YKWLZ/NO-PHOTO-FOUND.png"} alt="car-image" />
       </div>
-      <div className="w-[80%] mx-auto gap-6 p-4 flex felx-col md:flex-row pt-14 ">
-            <div className="flex-1 space-y-6">
+      <div className="bg-[url(https://i.ibb.co/QYgkYHq/bg-side-design.png)] bg-contain bg-no-repeat">
+
+      <div className="w-[80%] glass mx-auto gap-6 p-4 flex flex-col md:flex-row py-14 min-h-[400px] ">
+        
+            <div className="flex-1 space-y-6 md:border-r-2 md:pr-6 ">
                 <h2 className="text-3xl">{brandName} - {modelName}</h2>
                 <button className="btn btn-sm btn-warning">{type}</button>
                 <p className="text-lg">{short_description}</p>
                 <h2 className="">{}</h2>
 
             </div>
-            <div>
+            <div className="w-fit">
                 <button className="btn hover:">THIS CAR GOT A {ratings} <AiFillStar className="text-orange-500 text-xl"/> Ratings</button>
                 <p className="border-4 border-neutral rounded-full my-6 p-3 text-center bg-gradient-to-tr from-red-700 to-rose-600 text-white">Price: $ {parseInt(price).toLocaleString("en-US")}</p>
-                <button onClick={handleAddToCart} className="btn btn-neutral btn-wide"><BiCartAdd className="text-xl text-red-500"/>Add to Cart </button>
+                <button onClick={handleAddToCart} className="btn btn-neutral btn-wide motion-safe:animate-bounce hover:animate-none delay-700 "><BiCartAdd className="text-xl text-red-500  "/>Add to Cart </button>
             </div>
+      </div>
       </div>
     </div>
   );
