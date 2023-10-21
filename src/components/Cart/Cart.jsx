@@ -31,8 +31,8 @@ const Cart = () => {
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
-              <h1 className=" font-bold text-base-900 text-3xl flex justify-center items-center text-center gap-2 mb-16 border-x-8 border-red-600 px-4 w-fit mx-auto">
-                Your Cart  <GiCarWheel/>
+              <h1  data-aos="zoom-in"  className=" font-bold text-base-900 text-3xl flex justify-center items-center text-center gap-2 mb-16 border-x-8 border-red-600 px-4 w-fit mx-auto">
+                Your Cart  <GiCarWheel  data-aos="fade-down" />
               </h1>
             </header>
             <SingleCartItem cartItems={cartIDs}></SingleCartItem>

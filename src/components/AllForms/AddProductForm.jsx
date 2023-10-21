@@ -45,9 +45,9 @@ const AddProductForm = () => {
       <section className="">
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div className="lg:col-span-2 lg:pb-12 space-y-4">
+            <div  data-aos="zoom-in" className="lg:col-span-2 lg:pb-12 space-y-4">
                 <img src="https://cdn.dribbble.com/users/1830388/screenshots/6142489/800x600.gif" alt="gif animated"className="w-full" />
-              <h2 className="text-3xl">
+              <h2 className="text-2xl sm:text-3xl">
                Here you can add a brand new model of car with appropriate working car photo URL (*leave URL empty if no URL). Make sure to select all the brand and model 
               </h2>
               <div className="mt-8">
@@ -62,7 +62,7 @@ const AddProductForm = () => {
             </div>
             {/* Form div */}
             <div className="rounded-lg glass p-8 shadow-lg lg:col-span-3 lg:p-12 bg-base-300">
-              <form onSubmit={handleAddProduct} className="space-y-6">
+              <form  data-aos="zoom-in"  onSubmit={handleAddProduct} className="space-y-6">
                 <h2 className="text-center pb-10 text-2xl">ADD NEW MODEL</h2>
                 <div>
                   <label className="sr-only" htmlFor="modelName">

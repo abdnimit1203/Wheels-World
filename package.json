@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@egjs/react-flicking": "^4.11.0",
+    "aos": "^2.3.4",
     "firebase": "^10.5.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -19,6 +20,7 @@
     "react-fast-marquee": "^1.6.2",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-rating": "^2.0.5",
     "react-router-dom": "^6.17.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.32",

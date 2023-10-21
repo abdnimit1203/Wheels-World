@@ -103,7 +103,7 @@ const Navbar = () => {
         <Link to={"/"}>
         
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <img src={logo} alt="logo" className="w-24" />
+          <img src={logo} alt="logo" className="w-16 md:w-22" />
           <h2 className="uppercase md:text-xl font-black text-center">Wheels World</h2>
         </div>
         </Link>
@@ -146,7 +146,7 @@ const Navbar = () => {
               <li className="pl-2 text-sm text-base-700">
                 {user.displayName ? user.email : ""}
               </li>
-              <Link>
+              <Link to={"/user-profile"}>
                 <li className="flex flex-row items-center">
                   <p>
                     <span className="w-fit">

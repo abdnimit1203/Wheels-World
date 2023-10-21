@@ -7,8 +7,14 @@ const Extra = () => {
   return (
     <div>
       <div className="sm:px-[15%] py-14">
-        <h2 className="text-2xl text-center uppercase pb-14">
-          More Brands comming soon...
+        <h2
+          data-aos="zoom-in"
+          data-aos-duration="700"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          className="text-2xl text-center uppercase pb-14"
+        >
+          More Brands are coming...
         </h2>
         <Marquee>
           <div className="px-6">
@@ -59,9 +65,22 @@ const Extra = () => {
 
       {/* div 3 */}
       <div className="flex flex-col justify-center items-center gap-4 p-10 md:px-[15%] md:py-32">
-        
-        <h2 className="text-3xl border-x-8 border-red-600 px-10 sm:text-5xl uppercase font-semibold text-center">Why Choose Us</h2>
-        <p className="text-lg text-gray-500 text-center py-6">
+        <h2
+          data-aos="zoom-in"
+          data-aos-duration="700"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          className="text-3xl border-x-8 border-red-600 px-10 sm:text-5xl uppercase font-semibold text-center"
+        >
+          Why Choose Us
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          className="text-lg text-gray-500 text-center py-6"
+        >
           Car Dealer is the most enticing creative modern and multipurpose outo
           dealer <br />
           Suitable for any car dealer websites business or corporate websites
@@ -72,7 +91,13 @@ const Extra = () => {
         <hr className="py-10" />
         {/* cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            className="flex flex-col justify-center items-center gap-2"
+          >
             <button className="bg-gray-200 p-10 rounded-full ">
               <span className="text-4xl text-orange-500">
                 <FaFireExtinguisher />
@@ -84,7 +109,13 @@ const Extra = () => {
               Golley simply dummy text emm is of the printinxa of type and
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            className="flex flex-col justify-center items-center gap-2"
+          >
             <button className="bg-gray-200 p-10 rounded-full ">
               <span className="text-4xl text-orange-500">
                 <FaCarAlt />
@@ -96,7 +127,13 @@ const Extra = () => {
               Golley simply dummy text emm is of the printinxa of type and
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            className="flex flex-col justify-center items-center gap-2"
+          >
             <button className="bg-gray-200 p-10 rounded-full ">
               <span className="text-4xl text-orange-500">
                 <BsThermometerSnow />
@@ -108,7 +145,13 @@ const Extra = () => {
               Golley simply dummy text emm is of the printinxa of type and
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            className="flex flex-col justify-center items-center gap-2"
+          >
             <button className="bg-gray-200 p-10 rounded-full ">
               <span className="text-4xl text-orange-500">
                 <GiCarWheel />

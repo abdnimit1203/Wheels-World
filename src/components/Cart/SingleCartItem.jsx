@@ -56,7 +56,7 @@ const totalPrice = subTotal+ salesTax+dealerFees-discount
   return (
     <>
       {myCart.length ? 
-        <div className="mt-8">
+        <div   className="mt-8">
               <ul className="space-y-4">
               {
               myCart.map((cartItem) => (
@@ -111,7 +111,7 @@ const totalPrice = subTotal+ salesTax+dealerFees-discount
         </ul>
         <div className="mt-8 flex  justify-end border-t border-gray-100 pt-8 ">
         <div className="w-screen max-w-lg space-y-4">
-          <dl className="space-y-0.5 text-sm text-gray-700">
+          <dl className="space-y-0.5 text-sm text-neutral">
             <div className="flex justify-between">
               <dt>Subtotal</dt>
               <dd>$ {subTotal}</dd>
@@ -185,7 +185,7 @@ const totalPrice = subTotal+ salesTax+dealerFees-discount
       
       
       : (
-        <div className="flex flex-col justify-center items-center my-auto">
+        <div data-aos="zoom-in" data-aos-delay="500"  className="flex flex-col justify-center items-center my-auto">
           <img
             src="https://i.ibb.co/GFfHkws/empty-Cart.png"
             alt="emptycart"

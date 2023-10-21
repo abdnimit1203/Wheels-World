@@ -11,6 +11,7 @@ import SingleBrand from './../pages/SingleBrand';
 import UpdateProduct from "../pages/UpdateProduct";
 import Details from "../pages/Details";
 import Services from "../pages/Services";
+import UserProfile from "../pages/UserProfile";
 
 export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
         {
           path: "/services",
           element:<Services></Services>
+        },
+        {
+          path: "/user-profile",
+          element:<PrivateRoutes><UserProfile></UserProfile></PrivateRoutes>
         },
         
         {

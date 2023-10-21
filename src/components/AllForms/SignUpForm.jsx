@@ -7,7 +7,7 @@ import auth from "../../hooks/firebase.config";
 import { updateProfile } from "firebase/auth";
 
 const SignUpForm = () => {
-  const { user, emailSignUp,googleLogin } = useContext(AuthContext);
+  const { user, emailSignUp, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const [passError, setPassError] = useState(null);
@@ -46,7 +46,7 @@ const SignUpForm = () => {
     } else {
       setPassError(null);
       if (photo == "") {
-        photo = "images/userDef.jpg";
+        photo = "https://i.ibb.co/5x6DN2n/blank-dp.png";
       }
       emailSignUp(email, password)
         .then((res) => {
@@ -66,11 +66,9 @@ const SignUpForm = () => {
         })
         .catch((err) => {
           console.log(err.message);
-          notifyError(err.message)
+          notifyError(err.message);
         });
     }
-    
-    
   };
   const handleGoogleLogIn = () => {
     if (!user) {
@@ -78,14 +76,13 @@ const SignUpForm = () => {
         .then((res) => {
           console.log(res.user);
           notifySignUpSuccess();
-          navigate(location?.state ? location.state : "/")
+          navigate(location?.state ? location.state : "/");
         })
-        .catch(error=>{
+        .catch((error) => {
           // const errorCode = error.code;
           const errorMessage = error.message;
-          notifyError(errorMessage)
-
-    })
+          notifyError(errorMessage);
+        });
     } else {
       toast.error("Sign out of other account first!");
     }
@@ -95,6 +92,10 @@ const SignUpForm = () => {
     <div className="bg-[url('https://i.ibb.co/fn9QB24/loginBG.jpg')] min-h-screen bg-center bg-cover bg-no-repeat">
       <div className="flex flex-col justify-center items-center p-10 text-white min-h-screen bg-[#02020a62] backdrop-blur-lg">
         <form
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-mirror="true"
+          data-aos-once="false"
           onSubmit={handleSignUp}
           className="glass py-12 px-10 md:px-20 rounded-xl flex flex-col gap-4 w-fit md:mx-auto "
         >
@@ -114,7 +115,8 @@ const SignUpForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email*"
+            required
             className="bg-transparent border-b-2 p-2 mx-auto w-72 my-4 text-white outline-none"
           />
 
@@ -133,27 +135,38 @@ const SignUpForm = () => {
               {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
           </div>
-          <p>
+          <span>
             {passError ? (
               <p className="bg-red-600 rounded p-2 block ">{passError}</p>
             ) : (
               ""
             )}
-          </p>
+          </span>
           <button type="submit" className="btn w-full rounded-sm btn-secondary">
             Sign Up
           </button>
           <p className="text-center">
             Already have an account?{" "}
-            <Link to={"/login"} className="font-bold text-red-400">
+            <Link to={"/login"} className="font-bold px-2 text-lg text-red-400">
               Login
             </Link>
           </p>
           <p className="text-center w-full pb-4">or</p>
-          <button onClick={handleGoogleLogIn} type="button" className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm">
-            <span><img src="https://i.ibb.co/syGPgLz/google-Logo.png" alt="g logo" className="w-10"/></span>Sign in with Google</button>
+          <button
+            onClick={handleGoogleLogIn}
+            type="button"
+            className="flex justify-center items-center gap-4 bg-white text-black w-full px-4 py-1 rounded-sm"
+          >
+            <span>
+              <img
+                src="https://i.ibb.co/syGPgLz/google-Logo.png"
+                alt="g logo"
+                className="w-10"
+              />
+            </span>
+            Sign in with Google
+          </button>
         </form>
-        
       </div>
     </div>
   );

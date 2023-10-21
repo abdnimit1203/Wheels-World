@@ -1,7 +1,12 @@
 const Sales = () => {
   return (
     <div className="bg-[url(https://i.ibb.co/XXSyFfy/bg.jpg)] bg-cover ">
-      <div className="flex flex-col md:flex-row gap-4 p-10 md:px-[15%]">
+      <div 
+      data-aos="zoom-in"
+      data-aos-duration="500"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      className="flex flex-col md:flex-row gap-4 p-10 md:px-[15%]">
         <div className="w-fit flex-1">
           <img
             src="https://i.ibb.co/1KS9v1T/carsale.png"
@@ -10,7 +15,12 @@ const Sales = () => {
           />
         </div>
 
-        <div className="flex flex-col justify-center items-center py-16 gap-4 flex-1">
+        <div 
+        data-aos="fade-up"
+        data-aos-duration="700"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        className="flex flex-col justify-center items-center py-16 gap-4 flex-1">
           <h2 className="text-5xl text-white">718 BOXSTER</h2>
           <p className="text-lg glass text-gray-300">
             Get the Porche You always Wanted

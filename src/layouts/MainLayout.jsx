@@ -2,8 +2,11 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MainLayout = () => {
+  AOS.init();
   return (
     <>
       <div>
@@ -28,6 +31,7 @@ const MainLayout = () => {
             },
           }}
         />
+   
       </div>
       <div>
         <Footer></Footer>
