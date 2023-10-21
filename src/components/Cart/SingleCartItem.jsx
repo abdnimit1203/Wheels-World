@@ -24,7 +24,7 @@ const SingleCartItem = ({ cartItems }) => {
       confirmButtonText: "Yes, Remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/carts/single/${_id}`, {
+        fetch(`https://abds-wheels-world-server.vercel.app/carts/single/${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

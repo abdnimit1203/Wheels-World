@@ -14,7 +14,7 @@ const Cart = () => {
   // state or cart ids
   const [cartIDs, setCartIDs] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/carts/${cartUser}`)
+    fetch(`https://abds-wheels-world-server.vercel.app/carts/${cartUser}`)
       .then((res) => res.json())
       .then((data) => setCartIDs(data));
   }, [cartUser]);

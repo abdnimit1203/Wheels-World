@@ -56,7 +56,7 @@ const notify = ()=>{
 
   const handleAddToCart = ()=>{
   
-    fetch('http://localhost:3000/carts',{
+    fetch('https://abds-wheels-world-server.vercel.app/carts',{
         method: 'POST',
         headers: {
             'content-type': 'application/json',

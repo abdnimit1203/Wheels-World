@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
-          loader: ()=>fetch("http://localhost:3000/brands")
+          loader: ()=>fetch("https://abds-wheels-world-server.vercel.app/brands")
          
         },
         {
@@ -31,25 +31,25 @@ export const router = createBrowserRouter([
         {
           path: "/brands/:brandName",
           element:<PrivateRoutes><SingleBrand></SingleBrand></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:3000/products/${params.brandName}`)
+          loader: ({params})=> fetch(`https://abds-wheels-world-server.vercel.app/products/${params.brandName}`)
 
         },
         {
           path: "/models/:modelName",
           element:<PrivateRoutes><SingleBrand></SingleBrand></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:3000/models/${params.modelName}`)
+          loader: ({params})=> fetch(`https://abds-wheels-world-server.vercel.app/models/${params.modelName}`)
 
         },
         {
           path: "/update-product/:id",
           element:<PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:3000/products/single/${params.id}`)
+          loader: ({params})=> fetch(`https://abds-wheels-world-server.vercel.app/products/single/${params.id}`)
 
         },
         {
           path: "/details/:id",
           element:<PrivateRoutes><Details></Details></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:3000/products/single/${params.id}`)
+          loader: ({params})=> fetch(`https://abds-wheels-world-server.vercel.app/products/single/${params.id}`)
 
         },
         {
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
         {
           path: "/my-cart",
           element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-          loader: ()=> fetch('http://localhost:3000/products/')
+          loader: ()=> fetch('https://abds-wheels-world-server.vercel.app/products/')
         },
         {
           path: "/login",

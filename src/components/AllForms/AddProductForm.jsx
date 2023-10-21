@@ -24,7 +24,7 @@ const AddProductForm = () => {
     console.log("Products data: ", productData);
     
     toast.success("Product added successfully!");
-    fetch('http://localhost:3000/products',{
+    fetch('https://abds-wheels-world-server.vercel.app/products',{
         method: 'POST',
         headers: {
             'content-type': 'application/json',

@@ -41,7 +41,7 @@ const navigate = useNavigate()
 
     console.log("Updated Data = ", updatedData);
 
-    fetch(`http://localhost:3000/products/single/${_id}`,{
+    fetch(`https://abds-wheels-world-server.vercel.app/products/single/${_id}`,{
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
@@ -113,8 +113,8 @@ const navigate = useNavigate()
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="">
                     <select
-                          defaultValue={brandName}
-
+                      defaultValue={brandName}
+                      required
                       name="brandName"
                       id="brandName"
                       className="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 pl-4 "
@@ -131,9 +131,10 @@ const navigate = useNavigate()
 
                   <div className="">
                     <select
-                          defaultValue={type}
+                        defaultValue={type}
                       name="type"
                       id="type"
+                      required
                       className="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm h-10 pl-4 "
                     >
                       <option value="">Select Type</option>
@@ -158,6 +159,7 @@ const navigate = useNavigate()
                       type="number"
                       id="price"
                       min="0"
+                      required
                     />
                   </div>
 
@@ -185,11 +187,10 @@ const navigate = useNavigate()
                   </div>
                 </div>
                 <div>
-                  <label className="sr-only" htmlFor="short_description">
-                    Image URL
-                  </label>
+                
                   <input defaultValue={short_description}
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    required
                     placeholder="Short Details"
                     type="text"
                     id="short_description"
